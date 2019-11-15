@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "transition"
+};
 </script>
 
 <style lang="less" scoped></style>

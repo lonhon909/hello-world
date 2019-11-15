@@ -5,7 +5,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "UIComponent"
+};
 </script>
 
 <style lang="less"></style>

@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "AttrChild",
   props: ["propA"],
   methods: {
     show() {

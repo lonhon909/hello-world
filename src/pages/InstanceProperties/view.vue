@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: "InstanceProperties",
   data() {
     return {
       list: [

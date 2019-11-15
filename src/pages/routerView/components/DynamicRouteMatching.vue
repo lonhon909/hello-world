@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "DynamicRouteMatching",
   mounted() {
     console.log(this.$route.params);
   }

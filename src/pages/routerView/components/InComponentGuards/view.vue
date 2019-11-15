@@ -12,7 +12,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "InComponentGuards"
+};
 </script>
 
 <style lang="less" scoped>

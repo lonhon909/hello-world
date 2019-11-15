@@ -17,6 +17,7 @@
 import listenersChild from "./listenersChild";
 
 export default {
+  name: "Listeners",
   components: {
     listenersChild
   },

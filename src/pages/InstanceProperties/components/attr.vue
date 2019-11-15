@@ -15,6 +15,7 @@
 import attrChild from "./attrChild";
 
 export default {
+  name: "Attr",
   components: {
     attrChild
   }

@@ -14,6 +14,7 @@
 
 <script>
 export default {
+  name: "routerView",
   data() {
     return {
       list: [
