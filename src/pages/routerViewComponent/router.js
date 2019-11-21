@@ -4,8 +4,11 @@ export default [
     // 匹配： /routerView/Dynamic-Route-Matching/22
     path: "Dynamic-Route-Matching/:id",
     name: "DynamicRouteMatching",
-    component: require("./components/DynamicRouteMatching.vue").default
-    // component: () => import(/* webpackChunkName: 'DynamicRouteMatching' */'./components/DynamicRouteMatching.vue')
+    // component: require("./components/DynamicRouteMatching.vue").default
+    component: () =>
+      import(
+        /* webpackChunkName: 'DynamicRouteMatching' */ "./components/DynamicRouteMatching.vue"
+      )
   },
   {
     path: "Named-Views",

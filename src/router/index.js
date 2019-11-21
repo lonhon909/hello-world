@@ -1,7 +1,6 @@
 import Vue from "vue";
 import Router from "vue-router";
 import instancepropertiesRouter from "@/pages/InstanceProperties/router";
-import routerViewRouter from "@/pages/routerView/router";
 
 import Home from "@/pages/home/view.vue";
 
@@ -11,27 +10,19 @@ const router = new Router({
   routes: [
     {
       path: "/",
-      meta: {
-        title: "首页",
-        keepAlive: false
-      },
       redirect: "/home"
     },
     {
       path: "/home",
       name: "Home",
-      meta: {
-        title: "首页",
-        keepAlive: false
-      },
       component: Home
     },
-    {
-      path: "/list",
-      name: "List",
-      component: () =>
-        import(/* webpackChunkName: 'List' */ "../pages/list/view.vue")
-    },
+    // {
+    //   path: "/list",
+    //   name: "List",
+    //   component: () =>
+    //     import(/* webpackChunkName: 'List' */ "../pages/list/view.vue")
+    // },
     {
       path: "/instanceproperties",
       name: "InstanceProperties",
@@ -42,13 +33,13 @@ const router = new Router({
       children: instancepropertiesRouter
     },
     {
-      path: "/routerView",
-      name: "RouterView",
+      path: "/routerViewComponent",
+      name: "RouterViewComponent",
       component: () =>
         import(
-          /* webpackChunkName: 'RouterView' */ "../pages/routerView/view.vue"
+          /* webpackChunkName: 'RouterView' */ "../pages/routerViewComponent/view.vue"
         ),
-      children: routerViewRouter,
+      children: require("../pages/routerViewComponent/router").default,
       // 路由独享的守卫
       beforeEnter(to, from, next) {
         console.log("beforeEnter路由独享的守卫");
@@ -63,6 +54,15 @@ const router = new Router({
           /* webpackChunkName: "UIComponents" */ "../pages/UIComponents/view.vue"
         ),
       children: require("../pages/UIComponents/router").default
+    },
+    {
+      path: "/functional",
+      name: "FunctionalComponents",
+      component: () =>
+        import(
+          /* webpackChunkName: "FunctionalComponents" */ "../pages/FunctionalComponents/view.vue"
+        ),
+      children: require("../pages/FunctionalComponents/router").default
     }
   ]
 });

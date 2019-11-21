@@ -1,5 +1,5 @@
 <template>
-  <div class="router-view">
+  <div class="router-view-component">
     <p>routerView/路由管理器：</p>
     <a
       href=""
@@ -14,7 +14,8 @@
 
 <script>
 export default {
-  name: "routerView",
+  // 组件名不能叫routerView
+  name: "routerViewComponent",
   data() {
     return {
       list: [
@@ -54,7 +55,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.router-view {
+.router-view-component {
   font-size: 12px;
   line-height: 36px;
   padding: 10px;

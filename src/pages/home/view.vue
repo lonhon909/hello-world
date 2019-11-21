@@ -1,8 +1,10 @@
 <template>
   <div class="home">
-    <router-link to="/routerView">路由系列</router-link>
+    <router-link to="/routerViewComponent">路由系列</router-link>
     <br />
     <router-link to="/uiComponents">UI组件库</router-link>
+    <br />
+    <router-link to="/functional">函数式组件</router-link>
   </div>
 </template>
 
