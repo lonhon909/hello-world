@@ -49,6 +49,7 @@ const router = new Router({
     {
       path: "/uiComponents",
       name: "UIComponents",
+      redirect: "/uiComponents/overlay",
       component: () =>
         import(
           /* webpackChunkName: "UIComponents" */ "../pages/UIComponents/view.vue"
@@ -63,6 +64,32 @@ const router = new Router({
           /* webpackChunkName: "FunctionalComponents" */ "../pages/FunctionalComponents/view.vue"
         ),
       children: require("../pages/FunctionalComponents/router").default
+    },
+    {
+      path: "/transition",
+      name: "Transitions",
+      redirect: "/transition/baseTrans",
+      component: () =>
+        import(
+          /* webpackChunkName: "Transitions" */ "../pages/transition/view.vue"
+        ),
+      children: require("../pages/transition/route").default
+    },
+    {
+      path: "/vue-api",
+      name: "VueAPI",
+      redirect: "/vue-api/$data",
+      component: () =>
+        import(/* webpackChunkName: "VueAPI" */ "../pages/vueAPI/view.vue"),
+      children: require("../pages/vueAPI/router").default
+    },
+    {
+      path: "/vuex-demo",
+      name: "VuexDemo",
+      redirect: "/vuex-demo/state",
+      component: () =>
+        import(/* webpackChunkName: "VuexDemo" */ "../pages/vuexDemo/view.vue"),
+      children: require("../pages/vuexDemo/router").default
     }
   ]
 });

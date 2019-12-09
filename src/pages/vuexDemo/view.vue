@@ -1,5 +1,5 @@
 <template>
-  <div class="common-container">
+  <div class="common-container vuex">
     <router-view></router-view>
   </div>
 </template>
