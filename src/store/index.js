@@ -1,15 +1,17 @@
 import Vue from "vue";
-import vuex, { Store } from "vuex";
+import Vuex, { Store } from "vuex";
 import createLogger from "vuex/dist/logger";
 import menu from "./menu";
 
 import routers from "../pages/routerViewComponent/store";
-import transitions from "../pages/transition/store";
+import transition from "../pages/transition/store";
 import vueapi from "../pages/vueAPI/store";
 import uiComponents from "../pages/UIComponents/store";
 import vuexDemo from "../pages/vuexDemo/store";
+import functional from "../pages/FunctionalComponents/store";
 
-Vue.use(vuex);
+Vue.use(Vuex);
+console.log("Vuex", Vuex);
 
 export default new Store({
   state: {
@@ -89,12 +91,13 @@ export default new Store({
   },
   modules: {
     routers,
-    transitions,
+    transition,
     vueapi,
     uiComponents,
     vuexDemo,
     "vue-api": vueapi,
-    "vuex-demo": vuexDemo
+    "vuex-demo": vuexDemo,
+    functional
   },
   plugins: [createLogger()], // 日志中间件
   strict: true // 严格模式下，任何 mutation 处理函数以外修改 Vuex state 都会抛出错误

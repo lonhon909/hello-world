@@ -56,5 +56,11 @@ export default [
       import(
         /* webpackChunkName: "CustomEvents" */ "./components/CustomEvents.vue"
       )
+  },
+  {
+    path: "slot",
+    name: "Slot",
+    component: () =>
+      import(/* webpackChunkName: "Slot" */ "./components/slot.vue")
   }
 ];

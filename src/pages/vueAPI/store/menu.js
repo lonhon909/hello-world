@@ -52,5 +52,11 @@ export default [
     name: "customEvents",
     value: "",
     title: "customEvents"
+  },
+  {
+    path: "slot",
+    name: "Slot",
+    value: "slot",
+    title: "slot"
   }
 ];

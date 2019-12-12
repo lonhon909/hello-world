@@ -17,12 +17,20 @@ const router = new Router({
       name: "Home",
       component: Home
     },
-    // {
-    //   path: "/list",
-    //   name: "List",
-    //   component: () =>
-    //     import(/* webpackChunkName: 'List' */ "../pages/list/view.vue")
-    // },
+    {
+      path: "/list",
+      name: "List",
+      component: () =>
+        import(/* webpackChunkName: 'List' */ "../pages/list/view.vue")
+    },
+    {
+      path: "/css-module/:id",
+      name: "CSSModules",
+      component: () =>
+        import(
+          /* webpackChunkName: "CSSModule" */ "../pages/list/css-module.vue"
+        )
+    },
     {
       path: "/instanceproperties",
       name: "InstanceProperties",

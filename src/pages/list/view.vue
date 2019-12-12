@@ -9,6 +9,7 @@
     <NonPropAttributes title="非 Prop 的特性" class="non" />
 
     <BaseInput v-model="username" required placeholder="Enter your username" />
+    <p :class="$style.red">CSS Modules</p>
   </div>
 </template>
 
@@ -30,4 +31,8 @@ export default {
 };
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" module>
+.red {
+  color: red;
+}
+</style>

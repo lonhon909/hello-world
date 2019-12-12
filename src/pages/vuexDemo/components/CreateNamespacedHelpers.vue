@@ -13,7 +13,9 @@
   它返回一个对象，对象里有新的绑定在给定命名空间值上的组件绑定辅助函数
 */
 import { createNamespacedHelpers } from "vuex";
-const { mapState, mapMutations } = createNamespacedHelpers("vuex/modulesStore");
+const { mapState, mapMutations } = createNamespacedHelpers(
+  "vuex-demo/modulesStore"
+);
 
 export default {
   name: "CreateNamespacedHelpers",

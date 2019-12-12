@@ -31,21 +31,23 @@ Vue.config.productionTip = false;
 
 window.onload = function() {
   /#\/([a-z-]+)\/([a-z-]+)/i.test(location.hash);
-  if (RegExp.$1) {
+  if (RegExp.$1 && RegExp.$2) {
     store.dispatch(`${RegExp.$1}/setSmallMenu`);
     store.commit({
       type: "changeTitle",
       title: RegExp.$1,
       path: `/${RegExp.$1}`
     });
-  }
-  if (RegExp.$2) {
     store.commit({
       type: "changeSmallMenu",
       path: RegExp.$2
     });
   }
 };
+
+// console.log(App);
+// console.log(store);
+// console.log(router);
 
 /* eslint-disable no-new */
 new Vue({

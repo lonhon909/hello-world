@@ -22,6 +22,10 @@ export default {
         {
           component: "RenderFunctional",
           value: "render渲染函数式"
+        },
+        {
+          component: "ParamsFunctional",
+          value: "模板的函数式组件各个属性汇总"
         }
       ]
     };

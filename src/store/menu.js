@@ -11,7 +11,7 @@ export default [
     name: "Transitions", // 命名路由
     value: "vue动画", // 该路由描述
     title: "vue动画", // 路由中文名 头部标题
-    store: "transitions"
+    store: "transition"
   },
   {
     path: "/vue-api", // 路由
@@ -33,5 +33,12 @@ export default [
     value: "Vuex", // 该路由描述
     title: "Vuex", // 路由中文名 头部标题
     store: "vuexDemo"
+  },
+  {
+    path: "/functional",
+    name: "FunctionalComponents",
+    value: "函数式组件",
+    title: "函数式组件",
+    store: "functional"
   }
 ];

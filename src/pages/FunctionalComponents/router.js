@@ -1,5 +1,6 @@
 import BaseFunctional from "./components/BaseFunctional";
 import RenderFunctional from "./components/RenderFunctional";
+import ParamsFunctional from "./components/Params";
 
 export default [
   {
@@ -11,5 +12,10 @@ export default [
     path: "renderFunctional",
     name: "RenderFunctional",
     component: RenderFunctional
+  },
+  {
+    path: "paramsFunctional",
+    name: "ParamsFunctional",
+    component: ParamsFunctional
   }
 ];

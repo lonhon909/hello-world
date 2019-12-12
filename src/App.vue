@@ -40,6 +40,7 @@ export default {
       visibleSmallMenu: false
     };
   },
+  template: "<a></a>",
   computed: {
     ...mapState({
       title: state => state.title,

@@ -5,7 +5,7 @@ export default {
   // 命名空间
   namespaced: true,
   modules: {
-    modulesStore: modulesStore
+    modulesStore
   },
   state: {
     smallMenu: menu, // 小菜单

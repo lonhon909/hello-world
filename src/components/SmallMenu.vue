@@ -12,7 +12,11 @@
               v-for="(item, index) in list"
               :key="index"
               @click="jump(item)"
-              :class="{ actived: activeSmallMenu === item.name }"
+              :class="{
+                actived:
+                  activeSmallMenu.toLocaleLowerCase() ===
+                  item.name.toLocaleLowerCase()
+              }"
             >
               {{ item.title }}
             </li>

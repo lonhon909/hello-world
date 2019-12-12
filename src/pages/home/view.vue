@@ -5,12 +5,26 @@
     <router-link to="/uiComponents">UI组件库</router-link>
     <br />
     <router-link to="/functional">函数式组件</router-link>
+    <br />
+    <!-- <router-link to="/css-module">CSS Modules</router-link> -->
+
+    <div @click="jump">CSS Modules</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Home",
+  methods: {
+    jump() {
+      this.$router.push({
+        name: "CSSModules",
+        params: {
+          id: 10000
+        }
+      });
+    }
+  }
 };
 </script>
 
