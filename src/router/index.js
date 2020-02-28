@@ -18,6 +18,14 @@ const router = new Router({
       component: Home
     },
     {
+      path: "/fileupload",
+      name: "FileUpload",
+      component: () =>
+        import(
+          /* webpackChunkName: "fileUpload" */ "../pages/fileUpload/view.vue"
+        )
+    },
+    {
       path: "/list",
       name: "List",
       component: () =>

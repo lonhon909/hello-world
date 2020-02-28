@@ -4,6 +4,8 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 import store from "./store";
+import iView from "iview";
+import "iview/dist/styles/iview.css";
 // 全局组件
 import globalComponent from "./common/components/globalComponent";
 import BaseInput from "./common/components/BaseInput";
@@ -13,6 +15,8 @@ import "./common/style/animation.css";
 
 // 全局自定义指令
 import "./common/directives";
+
+Vue.use(iView);
 
 import Modal from "./common/components/plugins/modal";
 Vue.use(Modal);
@@ -44,10 +48,6 @@ window.onload = function() {
     });
   }
 };
-
-// console.log(App);
-// console.log(store);
-// console.log(router);
 
 /* eslint-disable no-new */
 new Vue({

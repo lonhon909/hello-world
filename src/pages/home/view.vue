@@ -6,15 +6,51 @@
     <br />
     <router-link to="/functional">函数式组件</router-link>
     <br />
-    <!-- <router-link to="/css-module">CSS Modules</router-link> -->
+    <router-link to="/fileupload">file upload</router-link>
 
-    <div @click="jump">CSS Modules</div>
+    <div @click="jump" class="test test-blue">CSS Modules</div>
+    <div @click="jump" class="title test-green">CSS Modules</div>
+    <div @click="jump" class="footer test-red">CSS Modules</div>
+    <Test @hook:created="add"></Test>
+
+    <div>
+      <i-input
+        class="wodeinput"
+        type="text"
+        v-model="value"
+        placeholder="占位文本"
+        :clearable="true"
+        :search="false"
+        :number="true"
+        :autofocus="true"
+        autocomplete="on"
+        :enter-button="false"
+      >
+        <!-- <span slot="prepend">http://</span>
+        <span slot="append">.com</span> -->
+      </i-input>
+    </div>
+    <ul>
+      <Fragment />
+    </ul>
   </div>
 </template>
 
 <script>
+import Test from "./Test";
+import Fragment from "./Fragment";
+
 export default {
+  components: {
+    Test,
+    Fragment
+  },
   name: "Home",
+  data() {
+    return {
+      value: "ooo"
+    };
+  },
   methods: {
     jump() {
       this.$router.push({
@@ -23,12 +59,15 @@ export default {
           id: 10000
         }
       });
+    },
+    add() {
+      console.log("***1234567890***");
     }
   }
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .home {
   font-size: 12px;
   line-height: 36px;
