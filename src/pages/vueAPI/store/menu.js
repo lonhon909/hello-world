@@ -58,5 +58,11 @@ export default [
     name: "Slot",
     value: "slot",
     title: "slot"
+  },
+  {
+    path: "inheritAttrs",
+    name: "InheritAttrs",
+    value: "inheritAttrs",
+    title: "inheritAttrs"
   }
 ];

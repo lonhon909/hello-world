@@ -62,5 +62,13 @@ export default [
     name: "Slot",
     component: () =>
       import(/* webpackChunkName: "Slot" */ "./components/slot.vue")
+  },
+  {
+    path: "inheritAttrs",
+    name: "InheritAttrs",
+    component: () =>
+      import(
+        /* webpackChunkName: 'inheritAttrs' */ "./components/inheritAttrs.vue"
+      )
   }
 ];
