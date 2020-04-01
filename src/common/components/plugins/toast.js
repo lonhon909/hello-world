@@ -1,4 +1,4 @@
-import Toast from '../com/Toast';
+import Toast from "../com/Toast";
 
 export default {
   install(Vue) {
@@ -6,11 +6,11 @@ export default {
     const vueToastController = Vue.extend(Toast);
     let toast = null;
     function show(options = {}) {
-      let div = document.createElement('div');
+      let div = document.createElement("div");
       // 创建实例，与new Vue({el: '#app'}) 一模一样
       toast = new vueToastController({
         el: div,
-        propsData: options,
+        propsData: options
       });
       document.body.appendChild(toast.$el);
       // 调用组件内部的方法
@@ -19,13 +19,13 @@ export default {
       toast.destroyElement = function() {
         document.body.removeChild(toast.$el);
         toast = null; // 释放内存
-      }
+      };
     }
     Vue.prototype.$Toast = {
       show
-    }
+    };
   }
-}
+};
 
 /**
  * @param message

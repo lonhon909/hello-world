@@ -33,12 +33,17 @@
     <ul>
       <Fragment />
     </ul>
+    <ul class="loading">
+      <li v-for="v in 6" :key="v" :style="`--line-index: ${v}`"></li>
+    </ul>
   </div>
 </template>
 
 <script>
 import Test from "./Test";
 import Fragment from "./Fragment";
+import LargeNumber from "../../common/js/large-number";
+console.log(LargeNumber("123123123", "123321"));
 
 export default {
   components: {
@@ -75,6 +80,36 @@ export default {
   a {
     text-decoration: underline;
     text-decoration-color: red;
+  }
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  // justify-content: space-between;
+  align-items: center;
+  li {
+    & + li {
+      margin-left: 5px;
+    }
+    --time: calc((var(--line-index) - 1) * 200ms);
+    width: 6px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #f66;
+    animation: beat 1s ease-in-out var(--time) infinite;
+  }
+}
+@keyframes beat {
+  0% {
+    height: 30px;
+  }
+  50% {
+    height: 15px;
+  }
+  100% {
+    height: 30px;
   }
 }
 </style>

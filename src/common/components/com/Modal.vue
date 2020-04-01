@@ -1,17 +1,31 @@
 <template>
-  <transition :name="transition?'fade':''">
-    <div v-show="visible" class="modal-container flex justify-content-center" @click="hideModal">
-      <div class="pop-container" :style="{'top': top, 'width': width}">
+  <transition :name="transition ? 'fade' : ''">
+    <div
+      v-show="visible"
+      class="modal-container flex justify-content-center"
+      @click="hideModal"
+    >
+      <div class="pop-container" :style="{ top: top, width: width }">
         <h1 class="model-title" v-if="title" v-html="title"></h1>
-        <div class="model-content" :style="{'textAlign': textAlign,maxHeight: maxHeight}">
+        <div
+          class="model-content"
+          :style="{ textAlign: textAlign, maxHeight: maxHeight }"
+        >
           <slot>
             <div v-html="content"></div>
           </slot>
         </div>
         <slot name="btn">
-          <div :class="filament?'modal-btn-filament':'modal-btn'" v-if="showConfirmButton||showCancelButton">
-            <span v-if="showCancelButton" @click="cencel">{{cancelButtonText}}</span>
-            <span v-if="showConfirmButton" @click="ok">{{confirmButtonText}}</span>
+          <div
+            :class="filament ? 'modal-btn-filament' : 'modal-btn'"
+            v-if="showConfirmButton || showCancelButton"
+          >
+            <span v-if="showCancelButton" @click="cencel">{{
+              cancelButtonText
+            }}</span>
+            <span v-if="showConfirmButton" @click="ok">{{
+              confirmButtonText
+            }}</span>
           </div>
         </slot>
       </div>
@@ -45,39 +59,39 @@ export default {
     // 按钮文案
     confirmButtonText: {
       type: String,
-      default: '确定'
+      default: "确定"
     },
     // 按钮文案
     cancelButtonText: {
       type: String,
-      default: '取消'
+      default: "取消"
     },
     // 提示框宽度
     width: {
       type: [String, Number],
-      default: '72%'
+      default: "72%"
     },
     // 文本的对齐方式
     textAlign: {
       validator(data) {
-        return ['left', 'center', 'right'].indexOf(data) > -1;
+        return ["left", "center", "right"].indexOf(data) > -1;
       },
-      default: 'center',
+      default: "center"
     },
     // 是否允许点击遮罩层关闭
     maskClosable: {
       type: Boolean,
-      default: false,
+      default: false
     },
     // 弹窗最大高度，超出出现局部滚动
     maxHeight: {
       type: String,
-      default: '50vh'
+      default: "50vh"
     },
     // 弹窗距离顶部的距离
     top: {
       type: String,
-      default: '50%'
+      default: "50%"
     },
     // 是否动画出现
     transition: {
@@ -87,16 +101,16 @@ export default {
     // 细线，dpr=2(scaleY(0.5))
     filament: {
       type: Boolean,
-      default: false,
+      default: false
     },
     onCancel: Function,
-    onOk: Function,
+    onOk: Function
   },
   data() {
     return {
       visible: false,
-      closed: false, // 是否已关闭
-    }
+      closed: false // 是否已关闭
+    };
   },
   watch: {
     closed(newValue) {
@@ -126,26 +140,26 @@ export default {
       if (this.onCancel) {
         this.onCancel();
       }
-      this.$emit('cancel');
+      this.$emit("cancel");
       this.hide();
     },
     ok() {
       if (this.onOk) {
         this.onOk();
       }
-      this.$emit('ok');
+      this.$emit("ok");
       this.hide();
     },
     hide() {
       this.closed = true;
     },
     destroyElement() {}
-  },
-}
+  }
+};
 </script>
 
 <style lang="less" scoped>
-.modal-container{
+.modal-container {
   position: fixed;
   top: 0;
   right: 0;
@@ -159,23 +173,25 @@ export default {
   letter-spacing: 0;
   text-align: center;
 }
-.flex{
+.flex {
   display: flex;
 }
-.justify-content-center{
+.justify-content-center {
   justify-content: center;
 }
 .align-items-center {
   align-items: center;
 }
-.fade-enter,.fade-leave-to{
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
 }
-.fade-enter-active,.fade-leave-active{
-  transition: opacity .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
 }
 
-.pop-container{
+.pop-container {
   width: 72%;
   max-width: 100% !important;
   max-height: 100%;
@@ -184,12 +200,12 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  .model-title{
+  .model-title {
     line-height: 0.84rem;
     text-align: center;
     padding-top: 0.2rem;
   }
-  .model-content{
+  .model-content {
     padding: 0 0.32rem 0.4rem;
     font-size: 0.28rem;
     line-height: 0.48rem;
@@ -197,14 +213,14 @@ export default {
     overflow-y: auto;
   }
 }
-.modal-btn-filament{
+.modal-btn-filament {
   display: flex;
   font-size: 0.28rem;
   text-align: center;
   line-height: 0.92rem;
   position: relative;
-  &:after{
-    content: '';
+  &:after {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
@@ -213,13 +229,13 @@ export default {
     background-color: rgba(0, 0, 80, 0.05);
     transform: scaleY(0.5);
   }
-  span{
+  span {
     flex: 1;
     color: #1d1d26;
     &:nth-child(2) {
       position: relative;
-      &:after{
-        content: '';
+      &:after {
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -228,30 +244,29 @@ export default {
         background-color: rgba(0, 0, 80, 0.05);
         transform: scaleX(0.5);
       }
-      color: #FB723E;
+      color: #fb723e;
     }
-    &:only-child{
-      color: #FB723E;
+    &:only-child {
+      color: #fb723e;
     }
   }
 }
-.modal-btn{
+.modal-btn {
   display: flex;
   font-size: 0.28rem;
   text-align: center;
   line-height: 0.92rem;
   border-top: 1px solid rgba(0, 0, 80, 0.05);
-  span{
+  span {
     flex: 1;
     color: #1d1d26;
     &:nth-child(2) {
       border-left: 1px solid rgba(0, 0, 80, 0.05);
-      color: #FB723E;
+      color: #fb723e;
     }
-    &:only-child{
-      color: #FB723E;
+    &:only-child {
+      color: #fb723e;
     }
   }
 }
 </style>
-

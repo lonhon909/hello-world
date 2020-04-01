@@ -1,4 +1,4 @@
-import OverLayer from '../com/OverLayer';
+import OverLayer from "../com/OverLayer";
 
 export default {
   install(Vue) {
@@ -6,11 +6,11 @@ export default {
     let layer = null;
     function show(options) {
       if (layer) return;
-      let div = document.createElement('div');
+      let div = document.createElement("div");
       layer = new OverLayConstructor({
         el: div,
-        propsData: options,
-      })
+        propsData: options
+      });
       document.body.appendChild(layer.$el);
       layer.show();
     }
@@ -19,12 +19,12 @@ export default {
         layer.hide().then(() => {
           document.body.removeChild(layer.$el);
           layer = null;
-        })
+        });
       }
     }
     Vue.prototype.$OverLay = {
       show,
-      hide,
-    }
+      hide
+    };
   }
-}
+};

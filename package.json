@@ -28,5 +28,9 @@
     "less-loader": "^5.0.0",
     "prettier": "^1.18.2",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/lonhon909/hello-world.git",
+  "author": "lonhon909 <ttabj@sina.com>",
+  "license": "MIT"
 }
