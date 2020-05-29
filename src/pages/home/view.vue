@@ -42,8 +42,6 @@
 <script>
 import Test from "./Test";
 import Fragment from "./Fragment";
-import LargeNumber from "../../common/js/large-number";
-console.log(LargeNumber("123123123", "123321"));
 
 export default {
   components: {
