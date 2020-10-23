@@ -36,22 +36,33 @@
     <ul class="loading">
       <li v-for="v in 6" :key="v" :style="`--line-index: ${v}`"></li>
     </ul>
+
+    <component :is="componentId" :data="data"></component>
+    <p>{{ data.value }}</p>
   </div>
 </template>
 
 <script>
 import Test from "./Test";
 import Fragment from "./Fragment";
+import Item1 from "./Item1";
+import Item2 from "./item2";
 
 export default {
   components: {
     Test,
-    Fragment
+    Fragment,
+    Item1,
+    Item2
   },
   name: "Home",
   data() {
     return {
-      value: "ooo"
+      value: "ooo",
+      componentId: "Item2",
+      data: {
+        value: "你好我好大家好"
+      }
     };
   },
   methods: {
