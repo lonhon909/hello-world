@@ -24,5 +24,13 @@ export default [
       import(
         /* webpackChunkName: "AutoTextarea" */ "./components/TextareaAuto.vue"
       )
+  },
+  {
+    path: "infinitescroll",
+    name: "infinitescroll",
+    component: () =>
+      import(
+        /* webpackChunkName: "infiniteScroll" */ "./components/infiniteContainer.vue"
+      )
   }
 ];

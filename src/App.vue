@@ -12,11 +12,9 @@
     />
     <!-- 底部小菜单 -->
     <SmallMenu v-model="visibleSmallMenu" :menuData="activeSmallMenuData" />
-    <div>
-      <transition :name="transitionName" mode="out-in">
-        <router-view class="child-view"></router-view>
-      </transition>
-    </div>
+    <transition :name="transitionName" mode="out-in">
+      <router-view class="child-view"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -120,6 +118,9 @@ export default {
   transform: translate(-30px, 0);
 }
 .child-view {
+  width: 100%;
+  height: 100%;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  -webkit-overflow-scrolling: touch;
 }
 </style>

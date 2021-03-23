@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "vue-cli-service serves",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -13,6 +14,7 @@
     "vue": "^2.6.10",
     "vue-fragment": "^1.5.1",
     "vue-router": "^3.1.3",
+    "vue-virtual-scroll-list": "^2.3.2",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
@@ -26,6 +28,7 @@
     "eslint-plugin-vue": "^5.0.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "moment": "^2.29.1",
     "prettier": "^1.18.2",
     "vue-template-compiler": "^2.6.10"
   },

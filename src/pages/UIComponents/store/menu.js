@@ -22,5 +22,11 @@ export default [
     name: "autotextarea",
     value: "autotextarea",
     title: "autotextarea"
+  },
+  {
+    path: "infinitescroll",
+    name: "infinitescroll",
+    value: "infinitescroll",
+    title: "infinitescroll"
   }
 ];
