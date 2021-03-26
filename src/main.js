@@ -49,6 +49,7 @@ window.onload = function() {
   }
 };
 
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
