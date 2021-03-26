@@ -106,6 +106,13 @@ const router = new Router({
       component: () =>
         import(/* webpackChunkName: "VuexDemo" */ "../pages/vuexDemo/view.vue"),
       children: require("../pages/vuexDemo/router").default
+    },
+    {
+      path: "/usual",
+      name: "usual",
+      redirect: "/usual/usualComponent",
+      component: () => import("../pages/usualComponent/view.vue"),
+      children: require("../pages/usualComponent/router").default
     }
   ]
 });

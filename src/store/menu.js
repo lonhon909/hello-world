@@ -40,5 +40,12 @@ export default [
     value: "函数式组件",
     title: "函数式组件",
     store: "functional"
+  },
+  {
+    path: "/usual",
+    name: "UsualComponent",
+    value: "常用的库",
+    title: "常用的库",
+    store: "usual"
   }
 ];

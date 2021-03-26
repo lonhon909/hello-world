@@ -9,6 +9,7 @@ import vueapi from "../pages/vueAPI/store";
 import uiComponents from "../pages/UIComponents/store";
 import vuexDemo from "../pages/vuexDemo/store";
 import functional from "../pages/FunctionalComponents/store";
+import usualComponent from "../pages/usualComponent/store";
 
 Vue.use(Vuex);
 console.log("Vuex", Vuex);
@@ -97,7 +98,8 @@ export default new Store({
     vuexDemo,
     "vue-api": vueapi,
     "vuex-demo": vuexDemo,
-    functional
+    functional,
+    usualComponent
   },
   plugins: [createLogger()], // 日志中间件
   strict: true // 严格模式下，任何 mutation 处理函数以外修改 Vuex state 都会抛出错误

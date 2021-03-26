@@ -1,13 +1,18 @@
 const path = require("path");
+const MyAwesomeWebpackPlugin = require("./webpack/plugins/awesome");
 
-require("./version");
+process.env.VUE_APP_DATE = new Date();
+process.env.VUE_APP_REPOSITORY = "master";
+process.env.VUE_APP_BRANCH = "master";
 
 module.exports = {
+  // 部署应用包时的基本 URL
   publicPath: "/",
   // 生成的生产环境构建文件的目录
   outputDir: "dist",
   // 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录
   assetsDir: "./static",
+  // 指定生成的 index.html 的输出路径 (相对于 outputDir)
   indexPath: "index.html",
   // 生成的静态资源在它们的文件名中包含了 hash 以便更好的控制缓存，可以设置false不会生成hash
   filenameHashing: false,
@@ -22,7 +27,11 @@ module.exports = {
       filename: "index.html",
       // template 中的 title 标签需要是 <title><%= htmlWebpackPlugin.options.title %></title>
       title: "index page",
+      // 在这个页面中包含的块，默认情况下会包含
+      // 提取出来的通用 chunk 和 vendor chunk。
+      // chunks: ["chunk-vendors", "chunk-common", "index"],
       minify: {
+        // 是否移除注释
         removeComments: false
       }
     },
@@ -48,12 +57,13 @@ module.exports = {
       // 为开发环境修改配置...
       config.devtool = "eval";
     }
+    config.plugins.push(new MyAwesomeWebpackPlugin());
   },
   /* configureWebpack: {
     plugins: [
       new MyAwesomeWebpackPlugin()
     ]
-  } */
+  }, */
   chainWebpack: config => {
     config.module
       .rule("vue")

@@ -15,6 +15,7 @@
     <transition :name="transitionName" mode="out-in">
       <router-view class="child-view"></router-view>
     </transition>
+    <p class="red">{{ $t("i.KKK") }} --- {{ $t("bz_message") }}</p>
   </div>
 </template>
 
@@ -122,5 +123,9 @@ export default {
   height: 100%;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   -webkit-overflow-scrolling: touch;
+}
+.red {
+  color: red;
+  font-size: 50px;
 }
 </style>

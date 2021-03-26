@@ -5,6 +5,7 @@ import App from "./App";
 import router from "./router";
 import store from "./store";
 import iView from "iview";
+import VueI18n from "vue-i18n";
 import "iview/dist/styles/iview.css";
 // 全局组件
 import globalComponent from "./common/components/globalComponent";
@@ -17,6 +18,7 @@ import "./common/style/animation.css";
 import "./common/directives";
 
 Vue.use(iView);
+Vue.use(VueI18n);
 
 import Modal from "./common/components/plugins/modal";
 Vue.use(Modal);
@@ -48,11 +50,41 @@ window.onload = function() {
     });
   }
 };
+// 国际化
+const i18n = new VueI18n({
+  locale: "ZHT",
+  fallbackLocale: "ZHS",
+  messages: {
+    ZHT: {
+      bz_message: "你好",
+      i: {
+        KKK: "KKK"
+      }
+    },
+    ZHS: {
+      bz_message: "nihao"
+    }
+  }
+});
+// 动态添加国际化
+setTimeout(() => {
+  i18n.mergeLocaleMessage("ZHT", { bz_message: "你好!!!" });
+}, 1000);
+
+// if (process.NODE_ENV !== "production") {
+//   const Vconsole = require("vconsole");
+//   new Vconsole();
+//   const eruda = require("eruda");
+//   eruda.init();
+// }
+
+// console.log(process.env);
 
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
   router,
+  i18n,
   store,
   render: h => h(App)
 });
