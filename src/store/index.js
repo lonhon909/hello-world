@@ -3,7 +3,7 @@ import Vuex, { Store } from "vuex";
 import createLogger from "vuex/dist/logger";
 import menu from "./menu";
 
-import routers from "../pages/routerViewComponent/store";
+import routerViewComponent from "../pages/routerViewComponent/store";
 import transition from "../pages/transition/store";
 import vueapi from "../pages/vueAPI/store";
 import uiComponents from "../pages/UIComponents/store";
@@ -12,11 +12,10 @@ import functional from "../pages/FunctionalComponents/store";
 import usualComponent from "../pages/usualComponent/store";
 
 Vue.use(Vuex);
-console.log("Vuex", Vuex);
 
 export default new Store({
   state: {
-    title: "首页", // 头部标题
+    title: "首*页", // 头部标题
     menuData: menu, // 大菜单
     activeSmallMenuData: [], // 小菜单
     activeLargeMenu: "/vuex", // 当前激活大菜单路由
@@ -91,15 +90,15 @@ export default new Store({
     }
   },
   modules: {
-    routers,
+    routerViewComponent,
     transition,
     vueapi,
     uiComponents,
-    vuexDemo,
+    // vuexDemo,
     "vue-api": vueapi,
     "vuex-demo": vuexDemo,
     functional,
-    usualComponent
+    usual: usualComponent
   },
   plugins: [createLogger()], // 日志中间件
   strict: true // 严格模式下，任何 mutation 处理函数以外修改 Vuex state 都会抛出错误

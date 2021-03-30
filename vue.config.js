@@ -34,13 +34,13 @@ module.exports = {
         // 是否移除注释
         removeComments: false
       }
-    },
-    home: {
-      entry: "src/main.js",
-      template: "public/home.html",
-      filename: "home.html",
-      title: "home page"
     }
+    // home: {
+    //   entry: "src/main.js",
+    //   template: "public/home.html",
+    //   filename: "home.html",
+    //   title: "home page"
+    // }
   },
   // 是否在开发环境下通过 eslint-loader 在每次保存时 lint 代码
   lintOnSave: process.env.NODE_ENV !== "production",
@@ -52,10 +52,10 @@ module.exports = {
   configureWebpack: config => {
     if (process.env.NODE_ENV === "production") {
       // 为生产环境修改配置...
-      config.devtool = "source-map";
+      // config.devtool = "source-map";
     } else {
       // 为开发环境修改配置...
-      config.devtool = "eval";
+      // config.devtool = "eval";
     }
     config.plugins.push(new MyAwesomeWebpackPlugin());
   },

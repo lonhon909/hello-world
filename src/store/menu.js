@@ -4,7 +4,7 @@ export default [
     name: "RouterViewComponent", // 命名路由
     value: "路由", // 该路由描述
     title: "路由", // 路由中文名 头部标题
-    store: "routers"
+    store: "routerViewComponent"
   },
   {
     path: "/transition", // 路由
@@ -32,7 +32,7 @@ export default [
     name: "VuexDemo", // 命名路由
     value: "Vuex", // 该路由描述
     title: "Vuex", // 路由中文名 头部标题
-    store: "vuexDemo"
+    store: "vuex-demo"
   },
   {
     path: "/functional",

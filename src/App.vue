@@ -15,7 +15,6 @@
     <transition :name="transitionName" mode="out-in">
       <router-view class="child-view"></router-view>
     </transition>
-    <p class="red">{{ $t("i.KKK") }} --- {{ $t("bz_message") }}</p>
   </div>
 </template>
 
@@ -39,7 +38,6 @@ export default {
       visibleSmallMenu: false
     };
   },
-  template: "<a></a>",
   computed: {
     ...mapState({
       title: state => state.title,

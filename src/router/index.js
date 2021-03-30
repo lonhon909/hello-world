@@ -4,6 +4,11 @@ import instancepropertiesRouter from "@/pages/InstanceProperties/router";
 
 import Home from "@/pages/home/view.vue";
 
+const push = Router.prototype.push;
+Router.prototype.push = function(location) {
+  return push.call(this, location).catch(err => err);
+};
+
 Vue.use(Router);
 
 const router = new Router({
@@ -75,6 +80,7 @@ const router = new Router({
     {
       path: "/functional",
       name: "FunctionalComponents",
+      redirect: "functional/baseFunctional",
       component: () =>
         import(
           /* webpackChunkName: "FunctionalComponents" */ "../pages/FunctionalComponents/view.vue"
@@ -110,9 +116,19 @@ const router = new Router({
     {
       path: "/usual",
       name: "usual",
-      redirect: "/usual/usualComponent",
+      redirect: "/usual/alloyfinger",
       component: () => import("../pages/usualComponent/view.vue"),
       children: require("../pages/usualComponent/router").default
+    },
+    {
+      path: "/i18n",
+      name: "i18n",
+      component: () => import("../pages/i18n/view.vue")
+    },
+    {
+      path: "*",
+      name: "404",
+      component: () => import(/* webpackChunkName: "404" */ "../pages/404.vue")
     }
   ]
 });
@@ -120,11 +136,12 @@ const router = new Router({
 // 全局前置守卫
 router.beforeEach((to, from, next) => {
   console.log("beforeEach全局前置守卫");
+  if (to.path === from.path) return;
   next();
 });
 // 全局后置钩子
 router.afterEach(() => {
-  console.log("afterEach全局后置钩子");
+  // console.log("afterEach全局后置钩子");
 });
 
 export default router;

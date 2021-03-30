@@ -50,6 +50,9 @@ export default {
   line-height: 36px;
   padding: 10px;
 }
+.list {
+  height: auto;
+}
 .list li {
   margin-right: 10px;
   display: inline;

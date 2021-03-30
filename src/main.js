@@ -14,7 +14,7 @@ import "./common/style/reset.css";
 import "./common/style/index.less";
 import "./common/style/animation.css";
 
-// 全局自定义指令
+// // 全局自定义指令
 import "./common/directives";
 
 Vue.use(iView);
@@ -27,7 +27,7 @@ Vue.use(Toast);
 import OverLayer from "./common/components/plugins/overlayer";
 Vue.use(OverLayer);
 
-// 注册全局组件
+// // 注册全局组件
 globalComponent.forEach(component => {
   Vue.component(component.name, component);
 });
@@ -36,7 +36,7 @@ Vue.component("BaseInput", BaseInput);
 Vue.config.productionTip = false;
 
 window.onload = function() {
-  /#\/([a-z-]+)\/([a-z-]+)/i.test(location.hash);
+  /#\/([a-z-]+)\/([$a-z-]+)/i.test(location.hash);
   if (RegExp.$1 && RegExp.$2) {
     store.dispatch(`${RegExp.$1}/setSmallMenu`);
     store.commit({
@@ -50,21 +50,13 @@ window.onload = function() {
     });
   }
 };
+
+import messages from "../static/message.json";
 // 国际化
 const i18n = new VueI18n({
   locale: "ZHT",
   fallbackLocale: "ZHS",
-  messages: {
-    ZHT: {
-      bz_message: "你好",
-      i: {
-        KKK: "KKK"
-      }
-    },
-    ZHS: {
-      bz_message: "nihao"
-    }
-  }
+  messages
 });
 // 动态添加国际化
 setTimeout(() => {
